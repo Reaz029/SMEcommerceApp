@@ -1,0 +1,103 @@
+﻿@using SMEcommerce.Models.EntityModels;
+
+@model SMEcommerceApp.Models.CategoryModels.CategoryListVM
+@{ 
+   // List<Category> CategoryList = ViewBag.CategoryList;
+    int serialNo = 0;
+}
+@{ 
+    Layout = "_AdminLayout";
+}
+@*<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var category in Model)
+            {
+                <tr>
+                    <td style="color:red;">@(++serialNo)</td>
+                    <td style="border:2px solid red;">@category.Name</td>
+                    <td>@category.Code</td>
+                </tr>
+            }
+    </tbody>
+</table>*@
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"> @Model.Title</h3>
+
+</div>
+    <div class="card-body">
+        @Model.Description
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Category List</h3>
+        <div class="card-tools">
+            <a class="btn btn-primary" asp-action="Create">Create</a>
+        </div>
+    </div>
+     
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th style="width: 40px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var category in Model.CategoryList)
+                {
+
+
+                    <tr>
+                        <td>@(++serialNo)</td>
+                        <td>@category.Name</td>
+                        <td>
+                            @category.Code
+                        </td>
+                     @*       <td>@category.Item.Name</td>*@
+@*
+                        @foreach(var item in Model.ItemList)
+                        {
+                            <td>@item.Category.Item.Name</td>
+                        }*@
+                        <td> 
+                            <a asp-action="Edit" asp-route-id="@category.Id" class="badge bg-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@category.Id" class="badge bg-danger">Delete</a> </td>
+                    
+                
+                    </tr>
+                }
+
+
+
+                
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</div>

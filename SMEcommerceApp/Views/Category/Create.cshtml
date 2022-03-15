@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+@model SMEcommerceApp.Models.ProductModels.ProductCreate
+@{
+    ViewData["Title"] = "Create";
+    /// Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    Layout = "_AdminLayout";
+}
+
+
+
+
+
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Add Category</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    @*@(Html.BeginForm("Create", "Product", new { enctype="multipart/form-data" }))*@
+    <form method="post" enctype="multipart/form-data">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Category Name</label>
+                <input asp-for="Name" type="text" class="form-control" id="name" placeholder="Enter Category Name">
+            </div>
+            <div class="form-group">
+                <label for="name">Category Name</label>
+                <input asp-for="Code" type="text" class="form-control" id="code" placeholder="Enter Category Code">
+            </div>
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <input asp-for="Description" type="text" class="form-control" id="Description" placeholder="Description">
+            </div>
+           
+
+
+
+
+
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+
+
+
+
+</div>
+
+
+
+
+<!-- /.card-body -->

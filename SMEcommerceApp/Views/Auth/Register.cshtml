@@ -1,0 +1,19 @@
+﻿@model SMEcommerceApp.Models.Auth.RegisterViewModel
+
+<h1>Register</h1>
+
+<form method="post">
+    <p>
+        Email: <input asp-for="Email" />
+    </p>
+
+    <p>
+        Password: <input asp-for="Password" />
+    </p>
+
+    <p>
+        Confirm Password: <input asp-for="ConfirmPassword" />
+    </p>
+
+    <input type="submit" value="Register" />
+</form>

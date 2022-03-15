@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+	 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SMEcommerce.Databases\SMEcommerce.Databases.csproj" />
+    <ProjectReference Include="..\SMEcommerce.Repositories.Abstraction\SMEcommerce.Repositories.Abstraction.csproj" />
+    <ProjectReference Include="..\SMEcommerce.Repositories\SMEcommerce.Repositories.csproj" />
+    <ProjectReference Include="..\SMEcommerce.Services\SMEcommerce.Services.csproj" />
+  </ItemGroup>
+
+</Project>

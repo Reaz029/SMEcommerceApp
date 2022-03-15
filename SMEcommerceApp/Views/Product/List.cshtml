@@ -1,0 +1,135 @@
+﻿@using SMEcommerce.Models.EntityModels;
+<link rel="stylesheet" href="~/css/bootstrap.css" />
+@model SMEcommerceApp.Models.ProductModels.ProductList
+@{ 
+    Layout = "_AdminLayout";
+}
+
+@{
+    // List<Category> CategoryList = ViewBag.CategoryList;
+    int serialNo = 0;
+}
+
+@*<table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var category in Model)
+                {
+                    <tr>
+                        <td style="color:red;">@(++serialNo)</td>
+                        <td style="border:2px solid red;">@category.Name</td>
+                        <td>@category.Code</td>
+                    </tr>
+                }
+        </tbody>
+    </table>*@
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"> Product List</h3>
+
+    </div>
+    <div class="card-body">
+        @*@Model.Title*@
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Product List</h3>
+        <div class="card-tools">
+            <a class="btn btn-primary" asp-action="Create">Create</a>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Manufacturer Date</th>
+                    <th>Category</th>
+                    <th style="width: 40px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var Item in Model.ItemList)
+                {
+                <tr>
+                    <td>@(++serialNo)</td>
+                    <td>@Item.Name</td>
+                    <td>@Item.Code</td>
+                    <td>
+                        @Item.Price
+                    </td>
+                    <td>
+                        @Item.Description
+                    </td>
+                    <td>
+                        @Item.ManufacturerDate.ToShortDateString()
+                    </td>
+
+                    <td>
+                        @Item.Category.Name
+
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            @if (Item.ImagePath != null)
+                            {
+                                <img src="@Url.Content(Item.ImagePath)" width="250" height="250" />
+                            }
+
+
+
+                        </div>
+                    </td>
+
+                    
+
+
+                    <td>
+                        <a asp-action="Details" asp-route-id="@Item.Id" class="badge badge-warning">Details</a>
+                        <a asp-action="Edit" asp-route-id="@Item.Id" class="badge bg-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@Item.Id" class="badge badge-danger">Delete</a>
+
+                    </td>
+
+
+                </tr>
+                }
+
+           
+
+
+
+
+
+                </tbody>
+        </table>
+    </div>
+
+   
+
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</div>

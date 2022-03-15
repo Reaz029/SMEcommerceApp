@@ -1,0 +1,44 @@
+﻿@model SMEcommerceApp.Models.Auth.LoginViewModel
+<link rel="stylesheet" href="~/css/LoginPage.css" />
+@{
+    Layout = "";
+}
+@*<link href="./css/LoginPage.css" rel="stylesheet" type="text/css" />*@
+
+@*<form method="post">
+        <p>
+            UserName: <input asp-for="UserName" />
+        </p>
+
+        <p>
+            Password: <input asp-for="Password" />
+        </p>
+
+        <input type="submit" value="Login" />
+    </form>*@
+
+@*@section Styles {*@
+<!--<link href="~/css/LoginPage.css" rel="stylesheet" type="text/css" />
+}-->
+
+
+
+
+
+<div class="wrapper">
+    <div class="logo"> <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt=""> </div>
+    <div class="mt-4 name"> Twitter </div>
+    <form class="p-3 mt-3" method="post">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input asp-for="UserName" type="text" name="userName" id="userName" placeholder="Username">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input asp-for="Password" type="password" name="password" id="pwd" placeholder="Password">
+        </div>
+        @*<input type="submit" value="Login" class="btn mt-3" asp-action="Index" asp-controller="Home" />*@
+        <button type="submit" value="login" class="btn mt-3">Login</button>
+    </form>
+    <div class="text-center fs-6"> <a href="#">Forget password?</a> or <a href="#">Sign up</a> </div>
+</div>
